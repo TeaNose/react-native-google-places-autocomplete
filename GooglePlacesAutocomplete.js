@@ -74,7 +74,18 @@ const defaultStyles = {
   androidLoader: {
     marginRight: -15,
   },
+  markerContainer: {
+    height: 24,
+    width: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  marker: {
+    height: 17,
+    width: 13,
+  },
 };
+const icMarker = require('MyProfile/assets/images/marker_grey.png');
 
 export default class GooglePlacesAutocomplete extends Component {
   _isMounted = false;
@@ -525,11 +536,14 @@ export default class GooglePlacesAutocomplete extends Component {
     }
 
     return (
-      <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description, rowData.isPredefinedPlace ? this.props.styles.predefinedPlacesDescription : {}]}
-        numberOfLines={1}
-      >
+      <View style={defaultStyles.markerContainer, this.props.styles.markerContainer}>
+        <Image source={icMarker} style={defaultStyles.marker} />
+        <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description, rowData.isPredefinedPlace ? this.props.styles.predefinedPlacesDescription : {}]}
+          numberOfLines={1}
+        >
         {this._renderDescription(rowData)}
-      </Text>
+        </Text>
+      </View>
     );
   }
 
