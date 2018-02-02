@@ -79,6 +79,7 @@ const defaultStyles = {
     width: 24,
     alignItems: 'center',
     justifyContent: 'center',
+    merginRight: 10,
   },
   marker: {
     height: 17,
@@ -674,7 +675,6 @@ export default class GooglePlacesAutocomplete extends Component {
           extraData={[this.state.dataSource, this.props]}
           ItemSeparatorComponent={this._renderSeparator}
           renderItem={({ item }) => this._renderRow(item)}
-          ListFooterComponent={this._renderPoweredLogo}
           {...this.props}
         />
       );
