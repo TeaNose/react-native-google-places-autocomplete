@@ -536,8 +536,10 @@ export default class GooglePlacesAutocomplete extends Component {
     }
 
     return (
-      <View style={defaultStyles.markerContainer, this.props.styles.markerContainer}>
-        <Image source={icMarker} style={defaultStyles.marker} />
+      <View style={{flex: 1, flexDirection: 'row'}}>
+        <View style={defaultStyles.markerContainer, this.props.styles.markerContainer}>
+          <Image source={icMarker} style={defaultStyles.marker} />
+        </View>
         <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description, rowData.isPredefinedPlace ? this.props.styles.predefinedPlacesDescription : {}]}
           numberOfLines={1}
         >
