@@ -85,7 +85,7 @@ const defaultStyles = {
     width: 13,
   },
 };
-const icMarker = require('MyProfile/assets/images/marker_grey.png');
+const icMarker = require('./Assets/marker_grey.png');
 
 export default class GooglePlacesAutocomplete extends Component {
   _isMounted = false;
